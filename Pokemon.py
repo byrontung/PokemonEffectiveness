@@ -1,6 +1,6 @@
 import pandas as pd
 
-from pokeeffectiveness.py import
+from pokeeffectiveness import getEffectiveness
 
 df = pd.read_csv("Pokemon.csv")
 # pokemon = df["Name"]
@@ -24,7 +24,7 @@ class Pokemon:
         self.type1 = None
         self.type2 = None
         self.legendary = None
-        # self.effective = []
+        self.effective = []
 
 # this is to make sure the name is valid, name should be titleized
     def getInfo(self):
@@ -33,3 +33,4 @@ class Pokemon:
         self.type1 = info.iloc[0]["Type 1"]
         self.type2 = info.iloc[0]["Type 2"]
         self.legendary = info.iloc[0]["Legendary"]
+        self.effective = getEffectiveness()

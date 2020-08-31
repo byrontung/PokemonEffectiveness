@@ -38,35 +38,53 @@ def user_input():
 
 def fIn_to_1(token, effDict):
     # print(effectiveDict)
-    return effDict[token[0]]
+    info = {effDict[token[0]]}
+    return list(info)
 
 
 def fIn_to_2(tokens, effDict):
     type1 = effDict[tokens[0]]
     type2 = effDict[tokens[1]]
     botheff = type1 & type2
-    return type1, type2, botheff
+    return list(type1), list(type2), list(botheff)
 
 
-def main():
+# def getEffectiveness():
+    # effectiveDict = csv_to_dict()
+    # user_in = user_input()
+    # while user_in != []:
+    #     if len(user_in) == 1:
+    #         eff = fIn_to_1(user_in, effectiveDict)
+    #         print(f"\n{user_in[0]} is weak against {eff}\n")
+
+    #     elif len(user_in) == 2:
+    #         eff0, eff1, effo = fIn_to_2(user_in, effectiveDict)
+    #         if effo == set():
+    #             effo = None
+    #         print(f"\n{user_in[0]} is weak against {eff0}")
+    #         print(f"\n{user_in[1]} is weak against {eff1}")
+    #         print(f"\nThis pokemon has a double weakness to {effo}\n")
+    #         # print(eff1, eff2, effo, sep="\n", end="\n")
+    #         # type1, type2, effo = fIn_to_2(user_in, effectiveDict)
+    #     user_in = user_input()
+
+
+def getEffectiveness():
     effectiveDict = csv_to_dict()
     user_in = user_input()
     while user_in != []:
         if len(user_in) == 1:
             eff = fIn_to_1(user_in, effectiveDict)
-            print(f"\n{user_in[0]} is weak against {eff}\n")
+            return [eff, None, None]
 
         elif len(user_in) == 2:
             eff0, eff1, effo = fIn_to_2(user_in, effectiveDict)
             if effo == set():
                 effo = None
-            print(f"\n{user_in[0]} is weak against {eff0}")
-            print(f"\n{user_in[1]} is weak against {eff1}")
-            print(f"\nThis pokemon has a double weakness to {effo}\n")
+            return [eff0, eff1, effo]
             # print(eff1, eff2, effo, sep="\n", end="\n")
             # type1, type2, effo = fIn_to_2(user_in, effectiveDict)
         user_in = user_input()
 
 
-if __name__ == "__main__":
-    main()
+getEffectiveness()
