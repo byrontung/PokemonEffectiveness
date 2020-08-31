@@ -14,7 +14,10 @@ class Pokemon:
         self.effective = None
 
     def __str__():
-        printstr = f"{self.name}: {type1}, {type2}
+        if self.type2 == None:
+            return f"{self.name} - types:{type1} - weakness:{self.effective}"
+        else:
+            return f"{self.name} - types:{type1}{type2} - weakness:{self.effective}"
 
     def getInfo(self):
         mask = df["Name"] == self.name
