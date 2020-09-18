@@ -7,8 +7,7 @@ df = pd.read_csv("Pokemon.csv")
 
 def csv_to_dict():
     effectiveDict = {}
-    fname = open(
-        "D:\Code\GitHub\PokemonEffectiveness\effectiveness.csv")
+    fname = open("effectiveness.csv")
     labels = (fname.readline().strip()).split(",")
     line = fname.readline().strip()
     while line != EOF:

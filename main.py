@@ -11,7 +11,7 @@ def main():
     #     user_in = user_input()
     repeat = menu()
     while repeat == True:
-        menu()
+        repeat = menu()
 
 
 if __name__ == "__main__":
