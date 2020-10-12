@@ -2,7 +2,6 @@ from Pokemon import *
 from menu import menu
 from pokeeffectiveness import *
 
-
 def main():
     # user_in = user_input()
     # while user_in != "Exit":

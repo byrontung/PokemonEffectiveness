@@ -2,7 +2,7 @@ import pandas as pd
 EOF = ""
 effectiveDict = {}
 
-df = pd.read_csv("Pokemon.csv")
+df = pd.read_csv("./pokemon.csv", engine ='python')
 
 
 def csv_to_dict():
