@@ -1,5 +1,6 @@
 from Pokemon import *
 from menu import menu
+from pokeeffectiveness import *
 
 
 def main():
