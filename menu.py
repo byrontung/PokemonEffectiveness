@@ -6,7 +6,7 @@ def menu():
     user_types = ['nan', 'nan']
     print("_" * 80)
     menu_input = input(
-        "1 - Type Effectiveness|\n2 - Pokemon Effectiveness: ").lower()
+        "1 - Type Effectiveness\n2 - Pokemon Effectiveness\nEnter your choice: ").lower()
     while menu_input not in options:
         menu_input = input("Menu - Try again: ").lower()
         print(menu_input)
