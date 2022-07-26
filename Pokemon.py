@@ -40,8 +40,11 @@ class Pokemon:
         return self.legendary
 
     def printeffective(self):
-        print(f"""
-        {self.type1} is weak against {self.effective[0]}
-        {self.type2} is weak against {self.effective[1]}
-        {self.name} has a double weakness against {self.effective[2]}
-                """)
+        print(f"\n\t{self.type1} is weak against {self.effective[0]}")
+        if self.type2:
+            print(f"\t{self.type2} is weak against {self.effective[1]}")
+        if self.effective[2]:
+            print(f"\t{self.name} has a double weakness against {self.effective[2]}")
+        else:
+            print(f"\t{self.name} does not have a double weakness")
+        print()
